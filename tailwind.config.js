@@ -9,6 +9,7 @@ module.exports = {
                 "secondary-light": "#eff6ff",
                 "primary-btn": "#3b82f6",
                 "primary-btn-hover": "#1d4ed8",
+                copywrite: "#6B7280",
             },
             fontFamily: {
                 "web-site": ["Quicksand", "sans-serif"],

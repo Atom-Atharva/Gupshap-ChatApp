@@ -5,7 +5,7 @@ import RedirectBtns from "./RedirectBtns";
 
 const Header = () => {
     return (
-        <div className="flex justify-between py-4">
+        <div className="flex justify-between py-4 px-20">
             <BrandLogo />
             <Navigator />
             <RedirectBtns />

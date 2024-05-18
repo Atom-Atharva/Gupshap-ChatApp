@@ -4,7 +4,7 @@ import Model from "./Model";
 
 const Hero = () => {
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center px-20">
             <Tagline />
             <Model />
         </div>

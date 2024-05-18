@@ -8,7 +8,10 @@ const Tagline = () => {
         <div className="w-1/2">
             <h1 className="text-5xl font-semibold mb-9">{headline}</h1>
             <p className="text-xl mb-9">{description}</p>
-            <StartChattingNowBtn />
+
+            <div className="w-1/2">
+                <StartChattingNowBtn />
+            </div>
         </div>
     );
 };

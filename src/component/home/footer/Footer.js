@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import CTA from "./CTA";
+import Middle from "./Middle";
+import Bottom from "./Bottom";
 
 const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+    return (
+        <div className="w-full ">
+            <div className="flex flex-col items-center px-20">
+                <CTA />
+            </div>
 
-export default Footer
+            <Middle />
+            <Bottom />
+        </div>
+    );
+};
+
+export default Footer;
