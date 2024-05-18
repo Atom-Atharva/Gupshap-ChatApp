@@ -5,7 +5,7 @@ import RightAbout from "./rightAbout";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-start shrink-0">
+    <div className="flex flex-col items-start shrink-0" id="about">
       {AboutData.map((data, index) => {
         if (index % 2 === 0) {
           return (

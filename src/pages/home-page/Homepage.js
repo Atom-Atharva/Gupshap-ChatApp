@@ -7,16 +7,16 @@ import ContactMe from "../../component/home/contact-me/ContactMe.js";
 import Footer from "../../component/home/footer/Footer.js";
 
 const Homepage = () => {
-  return (
-    <div className="">
-      <Header />
-      <Hero />
-      <Features />
-      <About />
-      <ContactMe />
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="">
+            <Header />
+            <Hero />
+            <Features />
+            <About />
+            <ContactMe />
+            <Footer />
+        </div>
+    );
 };
 
 export default Homepage;
