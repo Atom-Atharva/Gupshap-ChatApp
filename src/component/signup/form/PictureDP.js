@@ -1,12 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const PictureDP = () => {
+const PictureDP = (onChange) => {
     const inputRef = useRef();
     const [image, setImage] = useState();
 
     const handleInputClick = () => {
         inputRef.current.click();
     };
+
+    useEffect(() => {
+        // console.log("UseEffect");
+        onChange.onChange(image);
+    }, [image]);
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
@@ -34,7 +39,7 @@ const PictureDP = () => {
                             lastModified: Date.now(),
                         });
 
-                        console.log(file);
+                        // console.log(file);
                         setImage(file);
                     },
                     "image/jpeg",
@@ -66,7 +71,6 @@ const PictureDP = () => {
                 ref={inputRef}
                 onChange={handleImageChange}
                 className="hidden"
-                required
             />
         </div>
     );
