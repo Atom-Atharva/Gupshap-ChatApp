@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import SignInImg from "../../component/login/SignInImg";
+import RightStructurelogin from "../../component/login/RightStructurelogin";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div className="flex">
+      <RightStructurelogin />
+      <SignInImg />
+    </div>
+  );
+};
 
-export default Login
+export default Login;
