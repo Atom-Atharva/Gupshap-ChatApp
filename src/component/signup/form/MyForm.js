@@ -46,21 +46,21 @@ const MyForm = () => {
             <PictureDP value={image} onChange={(e) => setImage(e)} />
             <InputBox
                 name="Name"
-                placeholder="Name"
+                placeholder="Name*"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
             <InputBox
                 name="Email"
-                placeholder="Email"
+                placeholder="Email*"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
             <InputBox
                 name="Password"
-                placeholder="Password"
+                placeholder="Password*"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

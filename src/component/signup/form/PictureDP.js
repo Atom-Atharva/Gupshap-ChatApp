@@ -51,7 +51,7 @@ const PictureDP = (onChange) => {
 
     return (
         <div
-            className="h-36 w-36 cursor-pointer bg-white rounded-full flex justify-center items-center"
+            className="h-36 w-36 cursor-pointer border border-black border-opacity-20 bg-white rounded-full flex justify-center items-center"
             onClick={handleInputClick}
         >
             {image ? (
@@ -61,9 +61,9 @@ const PictureDP = (onChange) => {
                     className="h-36 w-36 rounded-full"
                 />
             ) : (
-                <div className="text-center font-semibold opacity-40">
-                    + Add Picture
-                </div>
+                <p className="text-center font-semibold opacity-40">
+                    + Add Picture*
+                </p>
             )}
             <input
                 type="file"
