@@ -3,7 +3,7 @@ import OrLine from "../../common/OrLine";
 
 const Line = () => {
     return (
-        <div className="content-center rotate-90 relative -translate-y-44">
+        <div className="content-center -rotate-90 relative -translate-x-4 translate-y-44">
             <OrLine position="absolute" />
         </div>
     );
