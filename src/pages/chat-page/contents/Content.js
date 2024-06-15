@@ -1,12 +1,14 @@
 import React from "react";
+import NavBar from "./NavBar";
+import MainArea from "./MainArea";
 
 const Content = () => {
-    return (
-        <div>
-            <div>Navigation Bar</div>
-            <div>Main Area</div>
-        </div>
-    );
+  return (
+    <div className="flex ">
+      <NavBar />
+      <MainArea />
+    </div>
+  );
 };
 
 export default Content;
