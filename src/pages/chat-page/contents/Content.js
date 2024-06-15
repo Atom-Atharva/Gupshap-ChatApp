@@ -4,7 +4,7 @@ import MainArea from "./MainArea";
 
 const Content = () => {
   return (
-    <div className="flex ">
+    <div className="flex">
       <NavBar />
       <MainArea />
     </div>
