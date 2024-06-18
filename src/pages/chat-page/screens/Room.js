@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ChatRoom from "../../../component/chat/room/ChatRoom";
 
 const Room = () => {
   return (
-    <div>Room</div>
-  )
-}
+    <div className="">
+      <ChatRoom />
+    </div>
+  );
+};
 
-export default Room
+export default Room;
