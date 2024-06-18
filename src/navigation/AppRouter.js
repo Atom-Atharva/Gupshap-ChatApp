@@ -4,6 +4,7 @@ import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
 import Chatpage from "../pages/chat-page/Chatpage";
 import Auth from "../pages/auth/Auth";
+import GithubLoading from "../pages/auth/GithubLoading";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: "login",
                 element: <Login />,
+            },
+            {
+                path: "loading",
+                element: <GithubLoading />,
             },
             {
                 path: "register",
