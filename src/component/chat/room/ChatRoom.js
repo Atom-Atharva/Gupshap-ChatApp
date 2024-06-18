@@ -5,13 +5,13 @@ import Chatarea from "./Chatarea";
 import Textsend from "./Textsend";
 
 const ChatRoom = () => {
-  return (
-    <div className="flex flex-col  ">
-      <Chattitle />
-      <Chatarea />
-      <Textsend />
-    </div>
-  );
+    return (
+        <div className="flex flex-col h-full">
+            <Chattitle />
+            <Chatarea />
+            <Textsend />
+        </div>
+    );
 };
 
 export default ChatRoom;
