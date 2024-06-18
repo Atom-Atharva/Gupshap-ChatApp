@@ -9,10 +9,10 @@ const MainArea = () => {
   return (
     <div>
       <div className="flex flex-col h-screen  border-r-2 border-black-opacity-20 ">
-        <Mainheading />
-        {/* <SearchArea />
-        <MultiChats /> */}
-        <Profdetail />
+        <Mainheading Heading="Home" />
+        <SearchArea />
+        <MultiChats />
+        {/* <Profdetail /> */}
       </div>
     </div>
   );
