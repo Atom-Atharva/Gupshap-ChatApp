@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Groupdet from "../../../component/chat/groupPage/Groupdet";
 
 const NewGroup = () => {
   return (
-    <div>NewGroup</div>
-  )
-}
+    <div className="flex flex-col  flex-1 bg-secondary-light  ">
+      <Groupdet />
+    </div>
+  );
+};
 
-export default NewGroup
+export default NewGroup;

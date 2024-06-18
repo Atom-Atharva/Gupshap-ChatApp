@@ -3,7 +3,7 @@ import { searchbtn } from "./Mainareadata";
 
 const SearchArea = () => {
   return (
-    <div className="py-5 flex justify-center items-center w-[416px]">
+    <div className="py-5 flex justify-center items-center  w-[416px]">
       <input
         placeholder="Search Friends"
         type="text"
