@@ -4,6 +4,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { GET_PROFILE_API } from "../../utils/apis";
 import { addUser } from "../../utils/redux/userSlice";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -16,17 +17,22 @@ const Auth = () => {
                 withCredentials: true,
             })
             .then((response) => {
+                console.log(response.data.data);
                 dispatch(addUser(response.data.data));
                 navigate("/chat");
             })
             .catch((err) => {
-                console.log(err.response.data);
+                console.log(err.response?.data);
             });
     }, []);
 
     return (
         <div>
-            <Outlet />
+            <GoogleOAuthProvider
+                clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            >
+                <Outlet />
+            </GoogleOAuthProvider>
         </div>
     );
 };

@@ -11,8 +11,8 @@ const ContactMe = () => {
         >
             <h2 className="text-3xl font-bold">Meet Our Team</h2>
             <div className="flex gap-6">
-                {cards.map((card) => {
-                    return <Card data={card} />;
+                {cards.map((card, index) => {
+                    return <Card key={index} data={card} />;
                 })}
             </div>
         </div>
