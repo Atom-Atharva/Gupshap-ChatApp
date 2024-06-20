@@ -1,24 +1,21 @@
 import React from "react";
+import MessageBubble from "./MessageBubble";
 
-const Singlemsg = ({ message, index }) => {
+const Singlemsg = ({ message, index, isGroup }) => {
+  const isSenderUser = message.senderName === "Atharva Sugandhi";
+
   return (
     <div
       key={index}
       className={`${
-        message.senderName === "Atharva Sugandhi"
-          ? " justify-end"
-          : " justify-start"
-      } flex  items-center`}
+        isSenderUser ? "justify-end" : "justify-start"
+      } flex items-center`}
     >
-      <div
-        className={`${
-          message.senderName === "Atharva Sugandhi"
-            ? "bg-primary-btn text-white"
-            : "bg-primary"
-        } p-4 rounded-lg min-w-7 max-w-80`}
-      >
-        <div className="font-regular text-base">{message.message}</div>
-      </div>
+      <MessageBubble
+        message={message}
+        isSenderUser={isSenderUser}
+        isGroup={isGroup}
+      />
     </div>
   );
 };
