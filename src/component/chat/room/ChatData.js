@@ -4,8 +4,7 @@ export const profileName = "Raghav Kanungo";
 export const messages = [
   {
     senderName: "Atharva Sugandhi",
-    message: "Hi Atom",
-    type: "sent",
+    message: "Hi Atom I am a good coder",
   },
   {
     senderName: "Kanishk Tiwari",
@@ -19,12 +18,10 @@ export const messages = [
     senderName: "Atharva Sugandhi",
     message:
       "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
-    type: "sent",
   },
   {
     senderName: "Atharva Sugandhi",
     message: "This Might be a Bug",
-    type: "sent",
   },
   {
     senderName: "Kanishk Tiwari",
@@ -32,29 +29,16 @@ export const messages = [
   },
   {
     senderName: "Atharva Sugandhi",
-    message: "Hi Atom",
-    type: "sent",
+    message: "Hi Atom i am the master of coding",
   },
   {
     senderName: "Atharva Sugandhi",
-    message: "Hi Atom",
-    type: "sent",
+    message: "Hi Atom people call me the master of coding",
   },
   {
     senderName: "Atharva Sugandhi",
     message:
       "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
-    type: "sent",
-  },
-  {
-    senderName: "Kanishk Tiwari",
-    message: "This Message is a 2 Liner Message, A very Long Message.",
-  },
-  {
-    senderName: "Atharva Sugandhi",
-    message:
-      "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
-    type: "sent",
   },
   {
     senderName: "Kanishk Tiwari",
@@ -64,7 +48,6 @@ export const messages = [
     senderName: "Atharva Sugandhi",
     message:
       "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
-    type: "sent",
   },
   {
     senderName: "Kanishk Tiwari",
@@ -74,6 +57,16 @@ export const messages = [
     senderName: "Atharva Sugandhi",
     message:
       "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
-    type: "sent",
+  },
+  {
+    senderName: "Kanishk Tiwari",
+    message: "This Message is a 2 Liner Message, A very Long Message.",
+  },
+  {
+    senderName: "Atharva Sugandhi",
+    message:
+      "This is A Paragraph, of Multiple lines, Here is the  Example of Max Width, and Min Width",
   },
 ];
+
+export const isGroup = true;
