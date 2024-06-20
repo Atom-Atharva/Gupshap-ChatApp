@@ -6,7 +6,7 @@ const MessageBubble = ({ message, isSenderUser, isGroup }) => {
       className={`${
         isSenderUser ? "bg-primary-btn text-white" : "bg-primary"
       } p-4 rounded-lg ${
-        isGroup ? "flex flex-col justify-center items-start gap-4" : ""
+        isGroup ? "flex flex-col justify-center items-start gap-1" : ""
       } min-w-7 max-w-80`}
     >
       {isGroup && (
