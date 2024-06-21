@@ -4,13 +4,13 @@ import MainArea from "./MainArea";
 import Notification from "./Notification";
 
 const Content = () => {
-    return (
-        <div className="flex">
-            <NavBar />
-            <MainArea />
-            <Notification />
-        </div>
-    );
+  return (
+    <div className="flex">
+      <NavBar />
+      <MainArea />
+      {/* <Notification /> */}
+    </div>
+  );
 };
 
 export default Content;

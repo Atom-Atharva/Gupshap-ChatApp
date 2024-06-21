@@ -5,16 +5,16 @@ import NewGroup from "./screens/NewGroup.js";
 import Room from "./screens/Room.js";
 
 const Chatpage = () => {
-    return (
-        <div>
-            <div className="flex w-screen">
-                <Content />
-                {/* <Default /> */}
-                {/* <NewGroup /> */}
-                <Room />
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="flex w-screen">
+        <Content />
+        {/* <Default />
+        <NewGroup /> */}
+        <Room />
+      </div>
+    </div>
+  );
 };
 
 export default Chatpage;
