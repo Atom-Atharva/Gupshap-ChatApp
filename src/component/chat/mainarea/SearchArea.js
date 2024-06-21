@@ -1,11 +1,11 @@
 import React from "react";
 import { searchbtn } from "./Mainareadata";
 
-const SearchArea = () => {
+const SearchArea = ({ Search }) => {
   return (
     <div className="py-5 flex justify-center items-center  w-[416px]">
       <input
-        placeholder="Search Friends"
+        placeholder={Search}
         type="text"
         className=" py-3 px-2 w-72 rounded border border-black border-opacity-20 text-base font-regular"
         required
