@@ -1,12 +1,14 @@
 import React from "react";
-import { profileName, profileimg } from "./ChatData";
+import { groupInfo } from "./ChatData";
 import Chattitle from "./Chattitle";
 import Chatarea from "./Chatarea";
 import Textsend from "./Textsend";
+import GroupInfo from "./group-info/GroupInfo";
 
 const ChatRoom = () => {
     return (
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full relative">
+            <GroupInfo info={groupInfo} />
             <Chattitle />
             <Chatarea />
             <Textsend />
