@@ -1,8 +1,8 @@
 import React from "react";
-import { multiChatData } from "./multiChatData";
-import SingleChat from "./singleChat";
+import { multiChatData } from "./GroupChatsData";
+import SingleChat from "../singleChat";
 
-const MultiChats = () => {
+const AllGroups = () => {
   return (
     <div className="flex flex-col gap-5 items-start overflow-y-scroll">
       {multiChatData.map((chat, index) => {
@@ -12,4 +12,4 @@ const MultiChats = () => {
   );
 };
 
-export default MultiChats;
+export default AllGroups;
