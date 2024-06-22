@@ -71,13 +71,17 @@ export const messages = [
 
 export const isGroup = true;
 
+export const groupContaints = {
+    createdByHeading: "Created By:-",
+    groupMembersHeading: "Group Members:-",
+    leaveGroup: "Leave Group",
+};
+
 export const groupInfo = {
     name: "Friends Group",
     image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-    createdByHeading: "Created By:-",
-    isGroupAdmin: true,
     createdBy: "Atharva Sugandhi",
-    groupMembersHeading: "Group Members:-",
+    isGroupAdmin: true,
     members: [
         {
             id: 1,
