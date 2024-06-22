@@ -131,3 +131,7 @@ export const adminView = {
     msg: "Add New User",
     addUser: `${process.env.PUBLIC_URL}/assets/svg/Reject.svg`,
 };
+
+export const profile = {
+    cut: `${process.env.PUBLIC_URL}/assets/svg/x-solid.svg`,
+};
