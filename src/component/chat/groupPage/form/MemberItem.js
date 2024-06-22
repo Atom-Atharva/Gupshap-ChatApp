@@ -16,11 +16,6 @@ const MemberItem = ({
       setMember([...member, { img, name, id }]);
     }
   };
-  const removeMember = () => {
-    if (isMember) {
-      setMember(member.filter((m) => m.id !== id));
-    }
-  };
 
   return (
     <div className="flex items-center h-auto justify-between w-full py-2 px-6">
@@ -29,21 +24,12 @@ const MemberItem = ({
         <div className="text-lg font-regular">{name}</div>
       </div>
       <div className="">
-        {isMember ? (
-          <img
-            src={deluser}
-            alt="remove person"
-            onClick={removeMember}
-            className="cursor-pointer "
-          />
-        ) : (
-          <img
-            src={newperson}
-            alt="add person"
-            onClick={addMember}
-            className="cursor-pointer"
-          />
-        )}
+        <img
+          src={newperson}
+          alt="add person"
+          onClick={addMember}
+          className="cursor-pointer"
+        />
       </div>
     </div>
   );

@@ -46,5 +46,4 @@ export const multiChatData = [
   },
 ];
 
-export const newperson = `${process.env.PUBLIC_URL}/assets/svg/AddNew.svg`;
-export const deluser = `${process.env.PUBLIC_URL}/assets/svg/deluser.svg`;
+export const newperson = `${process.env.PUBLIC_URL}/assets/svg/Accept.svg`;

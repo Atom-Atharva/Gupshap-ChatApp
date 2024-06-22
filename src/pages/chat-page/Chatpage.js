@@ -9,8 +9,8 @@ const Chatpage = () => {
     <div>
       <div className="flex w-screen">
         <Content />
-        {/* <Default />
-        <NewGroup /> */}
+        {/* <Default /> */}
+        {/* <NewGroup /> */}
         <Room />
       </div>
     </div>

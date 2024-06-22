@@ -36,4 +36,4 @@ export const friendtobeaddData = [
     img: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
   },
 ];
-export const newperson = `${process.env.PUBLIC_URL}/assets/svg/AddNew.svg`;
+export const newperson = `${process.env.PUBLIC_URL}/assets/svg/Accept.svg`;
