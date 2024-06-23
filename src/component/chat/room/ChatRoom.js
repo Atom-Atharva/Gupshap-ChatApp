@@ -8,25 +8,34 @@ import Profile from "./profile-pic/Profile";
 import { isGroup } from "./ChatData";
 
 const ChatRoom = () => {
-  const [isProfileVisible, setIsProfileVisible] = useState(false);
-  const [groupInfoVisible, setGroupInfoVisible] = useState(false);
+    const [isProfileVisible, setIsProfileVisible] = useState(false);
+    const [groupInfoVisible, setGroupInfoVisible] = useState(false);
 
-  return (
-    <div className="flex flex-col h-full relative">
-      {isGroup && groupInfoVisible && <GroupInfo info={groupInfo} />}
+    return (
+        <div className="flex flex-col h-full relative">
+            {isGroup && groupInfoVisible && (
+                <GroupInfo
+                    info={groupInfo}
+                    setGroupInfoVisible={setGroupInfoVisible}
+                    groupInfoVisible={groupInfoVisible}
+                />
+            )}
 
-      {!isGroup && isProfileVisible && (
-        <Profile img={profileimg} setIsProfileVisible={setIsProfileVisible} />
-      )}
-      <Chattitle
-        setIsProfileVisible={setIsProfileVisible}
-        setGroupInfoVisible={setGroupInfoVisible}
-        groupInfoVisible={groupInfoVisible}
-      />
-      <Chatarea />
-      <Textsend />
-    </div>
-  );
+            {!isGroup && isProfileVisible && (
+                <Profile
+                    img={profileimg}
+                    setIsProfileVisible={setIsProfileVisible}
+                />
+            )}
+            <Chattitle
+                setIsProfileVisible={setIsProfileVisible}
+                setGroupInfoVisible={setGroupInfoVisible}
+                groupInfoVisible={groupInfoVisible}
+            />
+            <Chatarea />
+            <Textsend />
+        </div>
+    );
 };
 
 export default ChatRoom;

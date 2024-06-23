@@ -1,11 +1,18 @@
 import React from "react";
 import Member from "./Member";
 import AddUsers from "./AddUsers";
-import { groupContaints } from "../ChatData";
+import { group, groupContaints } from "../ChatData";
 
-const GroupInfo = ({ info }) => {
+const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
     return (
         <div className="absolute top-8 left-10 bg-white flex flex-col w-96 gap-4 p-5 justify-center border border-black border-opacity-20 rounded-lg shadow-lg">
+            <div
+                className="absolute top-4 right-4 cursor-pointer"
+                onClick={() => setGroupInfoVisible(!groupInfoVisible)}
+            >
+                <img src={group.cut} className="h-6" alt="X" />
+            </div>
+
             <div className="flex flex-col gap-3 items-stretch justify-center">
                 <div className="flex justify-center">
                     <img src={info.image} className="h-40 w-40" alt="DP" />
