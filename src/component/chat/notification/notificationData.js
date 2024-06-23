@@ -39,3 +39,5 @@ export const icons = {
 };
 
 export const noDataMsg = "Your Notifications will appear here.";
+
+export const cut = `${process.env.PUBLIC_URL}/assets/svg/x-solid-black.svg`;
