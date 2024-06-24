@@ -1,5 +1,5 @@
 import React from "react";
-import { sendattach, send, text } from "./TextsendData";
+import { sendattach, text } from "./TextsendData";
 import Sendbtn from "./Sendbtn";
 
 const Textsend = () => {
