@@ -7,7 +7,7 @@ const AllFRiends = () => {
   return (
     <div className="flex flex-col gap-5 items-start overflow-y-scroll">
       {friendtobeaddData.map((chat, index) => {
-        return <Singlefriend key={index} data={chat} newperson={newperson} />;
+        return <Singlefriend key={chat.id} data={chat} newperson={newperson} />;
       })}
     </div>
   );

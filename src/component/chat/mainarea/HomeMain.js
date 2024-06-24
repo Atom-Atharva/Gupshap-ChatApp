@@ -4,6 +4,8 @@ import SearchArea from "./SearchArea";
 import MultiChats from "./MultiChats";
 
 const HomeMain = () => {
+  // Fetch Data Here getChats
+
   return (
     <div className="flex flex-col h-screen">
       <Mainheading Heading="Home" />
