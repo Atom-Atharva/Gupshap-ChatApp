@@ -1,6 +1,4 @@
-export const profileimg = `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`;
-export const profileName = "Raghav Kanungo";
-
+// Dummy Data --> Needs to be comment out
 export const messages = [
     {
         senderName: "Atharva Sugandhi",
@@ -69,61 +67,11 @@ export const messages = [
     },
 ];
 
-export const isGroup = true;
-
+// Don't Touch the following Data
 export const groupContaints = {
     createdByHeading: "Created By:-",
     groupMembersHeading: "Group Members:-",
     leaveGroup: "Leave Group",
-};
-
-export const groupInfo = {
-    name: "Friends Group",
-    image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-    createdBy: "Atharva Sugandhi",
-    isGroupAdmin: true,
-    members: [
-        {
-            id: 1,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 2,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 3,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 4,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 5,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 6,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 7,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-        {
-            id: 8,
-            name: "Atharva Sugandhi",
-            image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
-        },
-    ],
 };
 
 export const adminView = {
@@ -138,3 +86,8 @@ export const profile = {
 export const group = {
     cut: `${process.env.PUBLIC_URL}/assets/svg/x-solid-black.svg`,
 };
+
+export const sendattach = `${process.env.PUBLIC_URL}/assets/svg/sendattach.svg`;
+export const send = `${process.env.PUBLIC_URL}/assets/svg/paper-plane-solid.svg`;
+
+export const text = "Start Typing...";

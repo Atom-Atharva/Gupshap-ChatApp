@@ -1,10 +1,10 @@
 import React from "react";
 import ChatRoom from "../../../component/chat/room/ChatRoom";
 
-const Room = () => {
+const Room = ({ chatObject }) => {
     return (
         <div className="flex flex-col flex-1 h-screen">
-            <ChatRoom />
+            <ChatRoom chatInfo={chatObject} />
         </div>
     );
 };

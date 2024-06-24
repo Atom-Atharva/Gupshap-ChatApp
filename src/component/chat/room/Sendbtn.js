@@ -1,5 +1,5 @@
 import React from "react";
-import { send } from "./TextsendData";
+import { send } from "./ChatData";
 
 const Sendbtn = () => {
     return (

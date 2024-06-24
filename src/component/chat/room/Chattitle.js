@@ -1,10 +1,11 @@
 import React from "react";
-import { profileimg, profileName, isGroup, groupInfo } from "./ChatData";
 
 const Chattitle = ({
     setIsProfileVisible,
     setGroupInfoVisible,
     groupInfoVisible,
+    isGroup,
+    info,
 }) => {
     return (
         <div className="flex h-20 px-5 gap-2 items-center border-b border-black-opacity-20">
@@ -14,11 +15,11 @@ const Chattitle = ({
                     onClick={() => setGroupInfoVisible(!groupInfoVisible)}
                 >
                     <img
-                        src={groupInfo.image}
+                        src={info?.avatar?.url}
                         alt="profile"
                         className="w-12 h-12 rounded-full"
                     />
-                    <p className="text-xl font-semibold">{groupInfo.name}</p>
+                    <p className="text-xl font-semibold">{info?.name}</p>
                 </div>
             ) : (
                 <div
@@ -26,11 +27,11 @@ const Chattitle = ({
                     onClick={() => setIsProfileVisible(true)}
                 >
                     <img
-                        src={profileimg}
+                        src={info?.avatar?.url}
                         alt="profile"
                         className="w-12 h-12 rounded-full"
                     />
-                    <p className="text-xl font-semibold">{profileName}</p>
+                    <p className="text-xl font-semibold">{info?.name}</p>
                 </div>
             )}
         </div>
