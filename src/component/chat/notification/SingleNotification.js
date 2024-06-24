@@ -5,7 +5,7 @@ const SingleNotification = ({ notification }) => {
     return (
         <div className="flex justify-between py-2 px-6">
             <div className="flex items-center gap-4">
-                <img src={notification.image} className="h-12" alt="DP" />
+                <img src={notification.avatar} className="h-12" alt="DP" />
                 <p className="text-lg font-semibold">{notification.name}</p>
             </div>
             <div className="flex items-center gap-1">

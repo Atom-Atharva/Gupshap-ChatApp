@@ -1,5 +1,5 @@
 import React from "react";
-import { searchbtn } from "./Mainareadata";
+import { searchbtn } from "./homeData";
 
 const SearchArea = ({ Search }) => {
   return (

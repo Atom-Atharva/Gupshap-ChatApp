@@ -1,19 +1,23 @@
 import React from "react";
-import { email, profileName, profileimg } from "./ProfileData";
+import { user as userData } from "./profileData";
+import { useSelector } from "react-redux";
 
 const ProfileMain = () => {
-  return (
-    <div className="flex flex-col  gap-8 ">
-      <div className="flex items-center justify-center">
-        <img src={profileimg} className="w-60 h-60"></img>
-      </div>
+    // TODO: This needs to be updated After Complete of project
+    const user = useSelector((store) => store.user) || userData;
 
-      <div className="flex flex-col text-center gap-2 font-semibold">
-        <div className="text-4xl ">{profileName}</div>
-        <div className="text-base ">{email}</div>
-      </div>
-    </div>
-  );
+    return (
+        <div className="flex flex-col gap-8">
+            <div className="flex items-center justify-center">
+                <img src={user.avatar} className="w-60 h-60" alt="DP"></img>
+            </div>
+
+            <div className="flex flex-col text-center gap-2 font-semibold">
+                <div className="text-4xl ">{user.name}</div>
+                <div className="text-base ">{user.email}</div>
+            </div>
+        </div>
+    );
 };
 
 export default ProfileMain;

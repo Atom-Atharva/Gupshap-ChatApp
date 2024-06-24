@@ -4,7 +4,7 @@ import LogOutBtn from "../../../common/LogOutBtn";
 
 const Profdetail = () => {
   return (
-    <div className="flex flex-col py-16 h-screen  justify-between items-center items-stretch w-96">
+    <div className="flex flex-col py-16 h-screen  justify-between items-center w-[416px]">
       <ProfileMain />
       <div className="flex justify-center items-center">
         <LogOutBtn />
