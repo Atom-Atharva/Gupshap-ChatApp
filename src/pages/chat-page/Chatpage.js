@@ -24,12 +24,14 @@ const Chatpage = () => {
         <div>
             <div className="flex w-screen">
                 <Content />
+
                 {/**
                 Inside Redux
                 - If Chat ID --> Room
                 - If NewGroup --> NewGroup
                 - If !chatId && !newGroup --> Default
                 */}
+                
                 {chatId ? (
                     <Room chatId={chatId} />
                 ) : newGroup ? (

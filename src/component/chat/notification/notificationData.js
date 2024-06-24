@@ -1,37 +1,39 @@
-export const heading = "Notification";
-
+// This Needs to be comment out Later
 export const notifications = [
     {
-        id: "1",
+        _id: "1",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
     {
-        id: "2",
+        _id: "2",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
     {
-        id: "3",
+        _id: "3",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
     {
-        id: "4",
+        _id: "4",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
     {
-        id: "5",
+        _id: "5",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
     {
-        id: "6",
+        _id: "6",
         name: "Atharva Sugandhi",
-        image: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
+        avatar: `${process.env.PUBLIC_URL}/assets/img/atharvaRound.png`,
     },
 ];
+
+// DO NOT TOUCH THE FOLLOWING
+export const heading = "Notification";
 
 export const icons = {
     accept: `${process.env.PUBLIC_URL}/assets/svg/Accept.svg`,

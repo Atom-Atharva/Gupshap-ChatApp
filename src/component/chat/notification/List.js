@@ -11,7 +11,7 @@ const List = ({ data }) => {
                 return (
                     <SingleNotification
                         notification={notification}
-                        key={notification.id}
+                        key={notification._id}
                     />
                 );
             })}
