@@ -3,22 +3,22 @@ import { createSlice } from "@reduxjs/toolkit";
 const pagesSlice = createSlice({
     name: "pages",
     initialState: {
-        chatId: null,
+        chatObject: null,
         newGroup: false,
     },
 
     reducers: {
-        toggleChatId: (state, action) => {
-            if (state.chatId === action.payload) {
-                state.chatId = null;
+        toggleChatObject: (state, action) => {
+            if (state.chatObject?._id === action.payload?._id) {
+                state.chatObject = null;
                 return;
             }
             state.newGroup = false;
-            state.chatId = action.payload;
+            state.chatObject = action.payload;
             return;
         },
         toggleNewGroup: (state, action) => {
-            state.chatId = null;
+            state.chatObject = null;
             state.newGroup = !state.newGroup;
 
             return;
@@ -26,6 +26,6 @@ const pagesSlice = createSlice({
     },
 });
 
-export const { toggleChatId, toggleNewGroup } = pagesSlice.actions;
+export const { toggleChatObject, toggleNewGroup } = pagesSlice.actions;
 
 export default pagesSlice.reducer;

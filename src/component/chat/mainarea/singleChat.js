@@ -1,26 +1,29 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleChatId } from "../../../utils/redux/pagesSlice";
+import { toggleChatObject } from "../../../utils/redux/pagesSlice";
 
 const SingleChat = ({ data }) => {
     const { avatar, name } = data;
     const dispatch = useDispatch();
-    const selectedChatId = useSelector((state) => state.pages.chatId);
+    const selectedChatObject = useSelector((state) => state.pages.chatObject);
 
     const handleChatClick = () => {
-        dispatch(toggleChatId(data._id));
+        dispatch(toggleChatObject(data));
     };
 
-    console.log(selectedChatId === data._id);
+    console.log(avatar.url);
 
     return (
         <div
             className={`flex px-6 py-2 items-center gap-4 cursor-pointer w-full ${
-                selectedChatId === data._id && "bg-secondary-light"
+                selectedChatObject?._id === data._id && "bg-secondary-light"
             }`}
             onClick={handleChatClick}
         >
-            <img src={avatar} alt="dp" width={50} height={50} />
+            <div className="rounded-full w-14 h-14 overflow-hidden">
+                <img src={avatar?.url} className="w-14 h-14" alt="dp" />
+            </div>
+
             <p className="text-lg font-semibold">{name}</p>
         </div>
     );

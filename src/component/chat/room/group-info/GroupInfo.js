@@ -2,8 +2,12 @@ import React from "react";
 import Member from "./Member";
 import AddUsers from "./AddUsers";
 import { group, groupContaints } from "../ChatData";
+import { useSelector } from "react-redux";
 
 const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
+    const user = useSelector((store) => store.user);
+    const isGroupAdmin = info.creator._id === user?._id;
+
     return (
         <div className="absolute top-8 left-10 bg-white flex flex-col max-h-[95vh] w-96 gap-4 p-5 border border-black border-opacity-20 rounded-lg shadow-lg">
             <div
@@ -14,8 +18,12 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
             </div>
 
             <div className="flex flex-col gap-3 justify-center">
-                <div className="flex justify-center">
-                    <img src={info.image} className="h-32 w-32" alt="DP" />
+                <div className="flex justify-center overflow-hidden rounded-full">
+                    <img
+                        src={info.avatar.url}
+                        className="h-32 w-32 rounded-full"
+                        alt="DP"
+                    />
                 </div>
 
                 <p className="text-center font-bold text-2xl">{info.name}</p>
@@ -25,14 +33,14 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
                 <p className="font-semibold text-lg">
                     {groupContaints.createdByHeading}
                 </p>
-                <p>{info.createdBy}</p>
+                <p>{info.creator.name}</p>
             </div>
 
             <div className="mr-1">
                 <p className="font-semibold text-lg">
                     {groupContaints.groupMembersHeading}
                 </p>
-                {info.isGroupAdmin && (
+                {isGroupAdmin && (
                     <div>
                         <AddUsers />
                     </div>
@@ -41,9 +49,9 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
                     {info.members.map((member) => {
                         return (
                             <Member
-                                key={member.id}
+                                key={member._id}
                                 info={member}
-                                isGroupAdmin={info.isGroupAdmin}
+                                isGroupAdmin={isGroupAdmin}
                             />
                         );
                     })}

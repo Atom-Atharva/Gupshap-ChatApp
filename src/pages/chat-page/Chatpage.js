@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Chatpage = () => {
     const dispatch = useDispatch();
     const pages = useSelector((store) => store.pages);
-    const { chatId, newGroup } = pages;
+    const { chatObject, newGroup } = pages;
 
     useEffect(() => {
         // TODOs
@@ -32,8 +32,8 @@ const Chatpage = () => {
                 - If !chatId && !newGroup --> Default
                 */}
                 
-                {chatId ? (
-                    <Room chatId={chatId} />
+                {chatObject ? (
+                    <Room chatObject={chatObject} />
                 ) : newGroup ? (
                     <NewGroup />
                 ) : (
