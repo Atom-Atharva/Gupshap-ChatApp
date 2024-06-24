@@ -4,7 +4,7 @@ import SingleChat from "./singleChat";
 
 const MultiChats = () => {
   return (
-    <div className="flex flex-col gap-5 items-start overflow-y-scroll">
+    <div className="flex flex-col gap-2 items-start overflow-y-scroll">
       {multiChatData.map((chat, index) => {
         return <SingleChat key={index} data={chat} />;
       })}

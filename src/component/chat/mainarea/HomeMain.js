@@ -7,7 +7,7 @@ const HomeMain = () => {
   return (
     <div className="flex flex-col h-screen">
       <Mainheading Heading="Home" />
-      <SearchArea Search="Search Friends" />
+      <SearchArea Search="Search Friend" />
       <MultiChats />
     </div>
   );
