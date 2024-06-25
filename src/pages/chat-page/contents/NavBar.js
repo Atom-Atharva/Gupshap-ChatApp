@@ -18,6 +18,7 @@ const NavBar = ({
         setActiveComponent={setActiveComponent}
         setNotification={setNotification}
         notification={notification}
+        activeComponent={activeComponent}
       />
     </div>
   );

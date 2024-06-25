@@ -1,5 +1,5 @@
 import React from "react";
-import SingleChat from "../singleChat";
+import SingleChat from "../SingleChat";
 
 const AllGroups = ({ getMyGroups }) => {
   return getMyGroups ? (
