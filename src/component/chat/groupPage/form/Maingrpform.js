@@ -3,11 +3,47 @@ import Groupimg from "./Groupimg";
 import Addmembers from "./Addmembers";
 import GrpBtn from "./GrpBtn";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+import { CREATE_NEW_GROUP } from "../../../../utils/apis";
+import { useDispatch } from "react-redux";
+import { toggleChatObject } from "../../../../utils/redux/pagesSlice";
 
 const Maingrpform = ({ friends }) => {
     const [image, setImage] = useState(null);
     const [grpname, setGrpname] = useState("");
     const [member, setMember] = useState([]);
+    const dispatch = useDispatch();
+
+    const createNewGroup = (formData) => {
+        // On Success (Open that Group Chat --> toggleChatObject --> Redux)
+        axios
+            .post(CREATE_NEW_GROUP, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+                withCredentials: true,
+                credentials: "include",
+            })
+            .then((response) => {
+                console.log(response);
+                dispatch(toggleChatObject(response?.data?.data));
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error(error?.response?.data?.message, {
+                    position: "bottom-right",
+                    style: {
+                        fontWeight: "600",
+                        background: "red",
+                        color: "white",
+                    },
+                    iconTheme: {
+                        primary: "white",
+                        secondary: "red",
+                    },
+                });
+            });
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,15 +80,14 @@ const Maingrpform = ({ friends }) => {
         }
 
         const formData = {
-            image,
-            grpname,
-            member,
+            avatar: image,
+            name: grpname,
+            members: member,
         };
 
         console.log("Form Data:", formData);
         // API CALL - CREATE GROUP
-
-        // TODO: On Success (Open that Group Chat --> toggleChatObject --> Redux) 
+        createNewGroup(formData);
     };
 
     return (

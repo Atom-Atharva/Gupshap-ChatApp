@@ -47,3 +47,13 @@ export const GET_MY_GROUPS_API =
     process.env.REACT_APP_SERVER_API +
     process.env.REACT_APP_CHAT_ROUTE +
     process.env.REACT_APP_GET_MY_GROUPS_ROUTE;
+
+export const GET_MY_FRIENDS_API =
+    process.env.REACT_APP_SERVER_API +
+    process.env.REACT_APP_USER_ROUTE +
+    process.env.REACT_APP_GET_MY_FRIENDS_ROUTE;
+
+export const CREATE_NEW_GROUP =
+    process.env.REACT_APP_SERVER_API +
+    process.env.REACT_APP_CHAT_ROUTE +
+    process.env.REACT_APP_CREATE_NEW_GROUP;
