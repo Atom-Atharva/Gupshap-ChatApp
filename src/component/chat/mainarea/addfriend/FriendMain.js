@@ -2,13 +2,30 @@ import React, { useEffect, useState } from "react";
 import Mainheading from "../Mainheading";
 import SearchArea from "../SearchArea";
 import AllFRiends from "./AllFRiends";
-import { getAllUsers } from "./addFriendData";
+// import { getAllUsers } from "./addFriendData";
+import axios from "axios";
+import { GET_ALL_USERS_API } from "../../../../utils/apis";
 
 const FriendMain = () => {
     const [allUsers, setAllUsers] = useState(null);
+
+    const getAllUsers = () => {
+        axios
+            .get(GET_ALL_USERS_API, {
+                withCredentials: true,
+                credentials: "include",
+            })
+            .then((response) => {
+                setAllUsers(response.data.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     useEffect(() => {
         // API CALL TO GET ALL USERS
-        setAllUsers(getAllUsers);
+        getAllUsers();
     }, []);
 
     return (
