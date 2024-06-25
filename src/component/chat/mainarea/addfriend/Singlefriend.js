@@ -4,14 +4,12 @@ const Singlefriend = ({ data, newperson }) => {
     const { avatar, name } = data;
     console.log(avatar);
     return (
-        <div className="flex px-6 py-2 justify-between items-center w-full ">
-            <div className="flex  items-center justify-end gap-4">
+        <div className="flex px-6 py-2 justify-between items-center w-full cursor-pointer">
+            <div className="flex   items-center justify-end gap-4">
                 <img
                     src={avatar?.url}
                     alt="dp"
-                    className="rounded-full"
-                    width={50}
-                    height={50}
+                    className="rounded-full h-14 w-14"
                 />
                 <p className="text-lg font-semibold">{name}</p>
             </div>
