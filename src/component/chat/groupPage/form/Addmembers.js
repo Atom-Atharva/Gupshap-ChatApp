@@ -8,7 +8,7 @@ const Addmembers = ({ member, setMember, friends }) => {
             <div className="flex h-60 flex-col rounded-lg border border-black-opacity-40 overflow-y-auto items-start w-1/2 ">
                 {friends ? (
                     friends.length === 0 ? (
-                        <div className="flex h-full w-full items-center justify-center font-semibold">
+                        <div className="flex h-full w-full items-center justify-center font-semibold opacity-40">
                             Add Friends To Make Group.
                         </div>
                     ) : (
@@ -24,7 +24,7 @@ const Addmembers = ({ member, setMember, friends }) => {
                         ))
                     )
                 ) : (
-                    <div className="flex h-full w-full items-center justify-center font-semibold">
+                    <div className="flex h-full w-full items-center justify-center font-semibold opacity-40">
                         Your Friends Will Appear Here.
                     </div>
                 )}
