@@ -4,6 +4,10 @@ import Default from "./screens/Default.js";
 import NewGroup from "./screens/NewGroup.js";
 import Room from "./screens/Room.js";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { GET_PROFILE_API } from "../../utils/apis.js";
+import { addUser } from "../../utils/redux/userSlice.js";
+import { useNavigate } from "react-router-dom";
 
 // Things Needed
 // Chat Id --> From Redux and Fetch Data for it
@@ -13,11 +17,28 @@ const Chatpage = () => {
     const dispatch = useDispatch();
     const pages = useSelector((store) => store.pages);
     const { chatObject, newGroup } = pages;
+    const navigate = useNavigate();
+    const user = useSelector((store) => store.user);
 
-    useEffect(() => {
-        // TODOs
+    const getUserData = () => {
         // FETCH USER INFO IF NOT AVAILABLE
         // If NOT FETCHABLE then REDIRECT TO LOGIN
+        axios
+            .get(GET_PROFILE_API, {
+                credentials: "include",
+                withCredentials: true,
+            })
+            .then((response) => {
+                dispatch(addUser(response.data.data));
+            })
+            .catch((error) => {
+                console.log(error);
+                navigate("/auth/login");
+            });
+    };
+
+    useEffect(() => {
+        !user && getUserData();
     }, []);
 
     return (
@@ -31,7 +52,7 @@ const Chatpage = () => {
                 - If NewGroup --> NewGroup
                 - If !chatId && !newGroup --> Default
                 */}
-                
+
                 {chatObject ? (
                     <Room chatObject={chatObject} />
                 ) : newGroup ? (
