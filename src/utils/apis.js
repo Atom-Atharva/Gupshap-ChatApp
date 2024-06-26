@@ -67,3 +67,8 @@ export const GET_MY_NOTIFICATIONS =
   process.env.REACT_APP_SERVER_API +
   process.env.REACT_APP_USER_ROUTE +
   process.env.REACT_APP_GET_MY_NOTIFICATIONS;
+
+export const ACCEPT_FRIEND_REQUEST =
+  process.env.REACT_APP_SERVER_API +
+  process.env.REACT_APP_USER_ROUTE +
+  process.env.REACT_APP_ACCEPT_FRIEND_REQUEST;

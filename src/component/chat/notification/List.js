@@ -2,7 +2,7 @@ import React from "react";
 import { noDataMsg } from "./notificationData";
 import SingleNotification from "./SingleNotification";
 
-const List = ({ data }) => {
+const List = ({ data, onRemove }) => {
   return !data ? (
     <div>{noDataMsg}</div>
   ) : (
@@ -12,6 +12,7 @@ const List = ({ data }) => {
           <SingleNotification
             notification={notification}
             key={notification._id}
+            onRemove={onRemove}
           />
         );
       })}

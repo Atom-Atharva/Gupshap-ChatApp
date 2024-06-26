@@ -26,6 +26,13 @@ const Notification = ({ setNotification, notification }) => {
     // API call for get Chats
     getNotifications();
   }, []);
+  const removeNotification = (notificationId) => {
+    setNotifications((prevNotifications) =>
+      prevNotifications.filter(
+        (notification) => notification._id !== notificationId
+      )
+    );
+  };
 
   return (
     <div className="absolute bottom-28 left-9 w-96 max-h-96 p-5 flex flex-col gap-5 border border-black rounded-lg border-opacity-20 bg-secondary-light shadow-xl">
@@ -34,7 +41,7 @@ const Notification = ({ setNotification, notification }) => {
         setNotification={setNotification}
         count={notifications?.length}
       />
-      <List data={notifications} />
+      <List data={notifications} onRemove={removeNotification} />
     </div>
   );
 };
