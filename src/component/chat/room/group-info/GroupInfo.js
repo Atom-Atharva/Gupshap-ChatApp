@@ -8,10 +8,16 @@ import axios from "axios";
 import { GET_CHAT_INFO } from "../../../../utils/apis";
 import toast, { Toaster } from "react-hot-toast";
 import { toggleChatObject } from "../../../../utils/redux/pagesSlice";
+import UsersList from "./UsersList";
 
-const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
+const GroupInfo = ({
+    info,
+    setGroupInfoVisible,
+    groupInfoVisible,
+    setAddMemberVisible,
+}) => {
     const user = useSelector((store) => store.user);
-    const isGroupAdmin = info.creator._id === user?._id;
+    const [isGroupAdmin, setIsGroupAdmin] = useState(false);
     const chatId = useSelector((store) => store?.pages?.chatObject?._id);
     const [creator, setCreator] = useState(null);
     const [members, setMembers] = useState(null);
@@ -63,9 +69,13 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
                 credentials: "include",
             })
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 setMembers(response?.data?.data?.members);
                 setCreator(response?.data?.data?.creator);
+                // console.log(response?.data?.data?.creator);
+                setIsGroupAdmin(
+                    response?.data?.data?.creator?._id === user?._id
+                );
             })
             .catch((error) => {
                 console.log(error);
@@ -98,7 +108,6 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
             >
                 <img src={group.cut} className="h-6" alt="X" />
             </div>
-
             <div className="flex flex-col gap-3 justify-center">
                 <div className="flex justify-center overflow-hidden rounded-full">
                     <img
@@ -110,20 +119,23 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
 
                 <p className="text-center font-bold text-2xl">{info.name}</p>
             </div>
-
             <div className="flex gap-3 items-center">
                 <p className="font-semibold text-lg">
                     {groupContaints.createdByHeading}
                 </p>
                 <p className="font-semibold">{creator?.name}</p>
             </div>
-
             <div className="mr-1">
                 <p className="font-semibold text-lg">
                     {groupContaints.groupMembersHeading}
                 </p>
                 {isGroupAdmin && (
-                    <div>
+                    <div
+                        className="cursor-pointer"
+                        onClick={() => {
+                            setAddMemberVisible(true);
+                        }}
+                    >
                         <AddUsers />
                     </div>
                 )}

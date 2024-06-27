@@ -78,6 +78,7 @@ export const adminView = {
     image: `${process.env.PUBLIC_URL}/assets/svg/plussign.svg`,
     msg: "Add New User",
     removeUser: `${process.env.PUBLIC_URL}/assets/svg/Reject.svg`,
+    addUser: `${process.env.PUBLIC_URL}/assets/svg/Accept.svg`,
 };
 
 export const profile = {
