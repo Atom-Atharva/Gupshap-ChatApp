@@ -5,7 +5,7 @@ import axios from "axios";
 import { REMOVE_USER_API } from "../../../../utils/apis";
 import toast, { Toaster } from "react-hot-toast";
 
-const Member = ({ info, isGroupAdmin, setMembers }) => {
+const Member = ({ info, isGroupAdmin, setMembers, updateInfo,setUpdateInfo }) => {
     const user = useSelector((store) => store.user);
     const chatObject = useSelector((store) => store.pages?.chatObject);
     const isMemberAdmin = info._id === user?._id;
@@ -38,7 +38,8 @@ const Member = ({ info, isGroupAdmin, setMembers }) => {
                     },
                 });
                 // TODO: NEED TO CALL API WHEN SOMEONE OPENS CHATINFO
-                // setMembers();
+                setMembers(null);
+                setUpdateInfo(!updateInfo);
             })
             .catch((error) => {
                 console.log(error);

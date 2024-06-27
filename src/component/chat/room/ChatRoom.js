@@ -14,6 +14,7 @@ const ChatRoom = ({ chatInfo }) => {
     const { groupChat, members } = chatInfo;
     const profileimg = members[0]?.avatar?.url;
 
+    // TODO: CHAT FETCH API
     useEffect(() => {}, []);
 
     return (
