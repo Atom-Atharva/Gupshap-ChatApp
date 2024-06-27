@@ -16,6 +16,8 @@ const FriendMain = () => {
                 credentials: "include",
             })
             .then((response) => {
+                // Sort Based on Names
+                response.data.data.sort((a, b) => a.name.localeCompare(b.name));
                 setAllUsers(response.data.data);
             })
             .catch((error) => {

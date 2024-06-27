@@ -77,7 +77,7 @@ export const groupContaints = {
 export const adminView = {
     image: `${process.env.PUBLIC_URL}/assets/svg/plussign.svg`,
     msg: "Add New User",
-    addUser: `${process.env.PUBLIC_URL}/assets/svg/Reject.svg`,
+    removeUser: `${process.env.PUBLIC_URL}/assets/svg/Reject.svg`,
 };
 
 export const profile = {
