@@ -17,6 +17,10 @@ const GroupMain = () => {
                 credentials: "include",
             })
             .then((response) => {
+                // Sort Based on Last Updated
+                response.data.data.sort(
+                    (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
+                );
                 setGroups(response.data.data);
             })
             .catch((error) => {

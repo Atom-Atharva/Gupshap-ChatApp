@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Member from "./Member";
 import AddUsers from "./AddUsers";
 import { group, groupContaints } from "../ChatData";
@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
     const user = useSelector((store) => store.user);
     const isGroupAdmin = info.creator._id === user?._id;
+    const [members, setMembers] = useState(info?.members || null);
 
     return (
         <div className="absolute top-8 left-10 bg-white flex flex-col max-h-[95vh] w-96 gap-4 p-5 border border-black border-opacity-20 rounded-lg shadow-lg">
@@ -33,7 +34,7 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
                 <p className="font-semibold text-lg">
                     {groupContaints.createdByHeading}
                 </p>
-                <p>{info.creator.name}</p>
+                <p className="font-semibold">{info.creator.name}</p>
             </div>
 
             <div className="mr-1">
@@ -46,12 +47,13 @@ const GroupInfo = ({ info, setGroupInfoVisible, groupInfoVisible }) => {
                     </div>
                 )}
                 <div className="h-56 overflow-auto">
-                    {info.members.map((member) => {
+                    {members.map((member) => {
                         return (
                             <Member
                                 key={member._id}
                                 info={member}
                                 isGroupAdmin={isGroupAdmin}
+                                setMembers={setMembers}
                             />
                         );
                     })}
