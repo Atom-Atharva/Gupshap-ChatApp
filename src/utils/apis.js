@@ -84,6 +84,11 @@ export const LEAVE_GROUP_API =
   process.env.REACT_APP_LEAVE_GROUP;
 
 export const GET_CHAT_INFO =
-    process.env.REACT_APP_SERVER_API +
-    process.env.REACT_APP_CHAT_ROUTE +
-    process.env.REACT_APP_GET_CHAT_INFO;
+  process.env.REACT_APP_SERVER_API +
+  process.env.REACT_APP_CHAT_ROUTE +
+  process.env.REACT_APP_GET_CHAT_INFO;
+
+export const ADD_MEMBER =
+  process.env.REACT_APP_SERVER_API +
+  process.env.REACT_APP_CHAT_ROUTE +
+  process.env.REACT_APP_ADD_MEMBER;
