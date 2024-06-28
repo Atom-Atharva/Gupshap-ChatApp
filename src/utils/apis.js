@@ -92,3 +92,8 @@ export const ADD_MEMBER =
   process.env.REACT_APP_SERVER_API +
   process.env.REACT_APP_CHAT_ROUTE +
   process.env.REACT_APP_ADD_MEMBER;
+
+  export const GET_MESSAGE=
+  process.env.REACT_APP_SERVER_API+
+  process.env.REACT_APP_CHAT_ROUTE+
+  process.env.REACT_APP_GET_MESSAGE

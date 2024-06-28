@@ -5,6 +5,7 @@ import Signup from "../pages/auth/Signup";
 import Chatpage from "../pages/chat-page/Chatpage";
 import Auth from "../pages/auth/Auth";
 import GithubLoading from "../pages/auth/GithubLoading";
+import { SocketProvider } from "../utils/socket";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,12 @@ const router = createBrowserRouter([
     },
     {
         path: "/chat",
-        element: <Chatpage />,
+        element: (
+            // TO GIVE ACCESS FOR SOCKET THROUGH OUT CHATPAGE
+            <SocketProvider>
+                <Chatpage />
+            </SocketProvider>
+        ),
     },
 ]);
 

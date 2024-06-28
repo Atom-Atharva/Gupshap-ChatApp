@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Content from "../chat-page/contents/Content.js";
 import Default from "./screens/Default.js";
 import NewGroup from "./screens/NewGroup.js";
@@ -8,6 +8,8 @@ import axios from "axios";
 import { GET_PROFILE_API } from "../../utils/apis.js";
 import { addUser } from "../../utils/redux/userSlice.js";
 import { useNavigate } from "react-router-dom";
+// import { io } from "socket.io-client";
+import { useGetSocket } from "../../utils/socket.js";
 
 // Things Needed
 // Chat Id --> From Redux and Fetch Data for it
@@ -20,6 +22,9 @@ const Chatpage = () => {
     const navigate = useNavigate();
     const user = useSelector((store) => store.user);
 
+    // GET MY SOCKET
+    const socket = useGetSocket();
+    
     const getUserData = () => {
         // FETCH USER INFO IF NOT AVAILABLE
         // If NOT FETCHABLE then REDIRECT TO LOGIN
@@ -39,6 +44,22 @@ const Chatpage = () => {
 
     useEffect(() => {
         !user && getUserData();
+
+        //* CHECK socket.js in utils to understand how socket is been flowed in chatpage
+        if (socket) {
+            socket.on("connect", () => {
+                console.log("SOCKET CONNECTED WITH: ", socket.id);
+            });
+        }
+
+        return () => {
+            if (socket) {
+                socket.on("disconnect", () => {
+                    console.log("Disconnected FROM SOCKET");
+                });
+                socket.disconnect();
+            }
+        };
     }, []);
 
     return (
@@ -47,11 +68,11 @@ const Chatpage = () => {
                 <Content />
 
                 {/**
-                Inside Redux
-                - If Chat ID --> Room
-                - If NewGroup --> NewGroup
-                - If !chatId && !newGroup --> Default
-                */}
+                    Inside Redux
+                    - If Chat ID --> Room
+                    - If NewGroup --> NewGroup
+                    - If !chatId && !newGroup --> Default
+                    */}
 
                 {chatObject ? (
                     <Room chatObject={chatObject} />
