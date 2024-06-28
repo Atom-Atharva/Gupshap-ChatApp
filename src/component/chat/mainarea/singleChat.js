@@ -11,7 +11,7 @@ const SingleChat = ({ data }) => {
         dispatch(toggleChatObject(data));
     };
 
-    console.log(avatar.url);
+    // console.log(avatar.url);
 
     return (
         <div
