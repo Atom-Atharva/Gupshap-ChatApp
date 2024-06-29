@@ -1,5 +1,5 @@
 import React from "react";
-import SingleChat from "./singleChat";
+import ChatSingle from "./ChatSingle";
 
 const MultiChats = ({ getChatsData }) => {
     return getChatsData ? (
@@ -10,7 +10,7 @@ const MultiChats = ({ getChatsData }) => {
         ) : (
             <div className="flex flex-col gap-2 items-start overflow-y-scroll">
                 {getChatsData.map((chat) => {
-                    return <SingleChat key={chat._id} data={chat} />;
+                    return <ChatSingle key={chat._id} data={chat} />;
                 })}
             </div>
         )
