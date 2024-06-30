@@ -3,8 +3,11 @@ import { icons } from "./notificationData";
 import { ACCEPT_FRIEND_REQUEST } from "../../../utils/apis";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { triggerRerender } from "../../../utils/redux/homeupdateSlice";
 
 const SingleNotification = ({ notification, onRemove }) => {
+  const dispatch = useDispatch();
   const handleAccept = async (accept) => {
     await axios
       .post(
@@ -34,6 +37,7 @@ const SingleNotification = ({ notification, onRemove }) => {
           },
         });
         onRemove(notification._id);
+        dispatch(triggerRerender());
       })
       .catch((error) => {
         console.log(error);
