@@ -2,44 +2,55 @@ import React, { useEffect, useState } from "react";
 import Mainheading from "./Mainheading";
 import SearchArea from "./SearchArea";
 import MultiChats from "./MultiChats";
-// import { getChatsData } from "./homeData";
 import axios from "axios";
 import { GET_MY_CHATS_API } from "../../../utils/apis";
+import { useSelector } from "react-redux";
 
 const HomeMain = () => {
-    // Fetch Data Here getChats
-    const [mychats, setMyChats] = useState(null);
+  const [mychats, setMyChats] = useState(null);
+  const [filteredChats, setFilteredChats] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const updateFlag = useSelector((state) => state.trigger.updateFlag);
 
-    const getChats = () => {
-        axios
-            .get(GET_MY_CHATS_API, {
-                withCredentials: true,
-                credentials: "include",
-            })
-            .then((response) => {
-                // Sort Based on Last Updated
-                response.data.data.sort(
-                    (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
-                );
-                setMyChats(response.data.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
+  const getChats = () => {
+    axios
+      .get(GET_MY_CHATS_API, {
+        withCredentials: true,
+        credentials: "include",
+      })
+      .then((response) => {
+        response.data.data.sort(
+          (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
+        );
+        setMyChats(response.data.data);
+        setFilteredChats(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-    useEffect(() => {
-        // API call for get Chats
-        getChats();
-    }, []);
+  useEffect(() => {
+    getChats();
+  }, [updateFlag]);
 
-    return (
-        <div className="flex flex-col h-screen">
-            <Mainheading Heading="Home" />
-            <SearchArea Search="Search Friend" />
-            <MultiChats getChatsData={mychats} />
-        </div>
-    );
+  useEffect(() => {
+    if (mychats) {
+      const lowercasedQuery = searchQuery.toLowerCase();
+      const filtered = mychats.filter((chat) =>
+        chat.name.toLowerCase().includes(lowercasedQuery)
+      );
+      setFilteredChats(filtered);
+    }
+  }, [searchQuery, mychats]);
+
+  return (
+    <div className="flex flex-col h-screen">
+      <Mainheading Heading="Home" />
+      <SearchArea Search="Search Friend" setSearchQuery={setSearchQuery} />
+      <MultiChats getChatsData={filteredChats} />
+    </div>
+  );
 };
 
 export default HomeMain;

@@ -9,6 +9,7 @@ import { GET_CHAT_INFO } from "../../../../utils/apis";
 import toast, { Toaster } from "react-hot-toast";
 import { toggleChatObject } from "../../../../utils/redux/pagesSlice";
 import UsersList from "./UsersList";
+import { groupRerender } from "../../../../utils/redux/groupupdateSlice";
 
 const GroupInfo = ({
   info,
@@ -46,6 +47,7 @@ const GroupInfo = ({
           },
         });
         dispatch(toggleChatObject(null));
+        dispatch(groupRerender());
       })
       .catch((error) => {
         console.log(error);
