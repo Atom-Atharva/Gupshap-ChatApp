@@ -16,6 +16,7 @@ const Textsend = () => {
     // console.log(text);
 
     // TODO : CONSTANTS IN Constant.js
+    if (text === "") return;
 
     socket.emit("NEW_MESSAGE", {
       chatID: chatId,
